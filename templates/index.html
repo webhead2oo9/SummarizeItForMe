@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Video Summarizer</title>
+  <style>
+    body {
+      font-family: 'Arial, sans-serif';
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      margin-bottom: 20px;
+    }
+    label {
+      margin-bottom: 5px;
+    }
+    input {
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      width: 300px;
+    }
+    button {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #28a745;
+      color: #fff;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+    p {
+      margin: 10px 0;
+    }
+    textarea {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      resize: both;
+    }
+  </style>
+</head>
+<body>
+  <h1>YouTube Video Summarizer</h1>
+  <form method="POST">
+    <label for="youtube_url">YouTube URL:</label>
+    <input type="url" id="youtube_url" name="youtube_url" value="{{ youtube_url }}" required>
+    <button type="submit">Summarize</button>
+  </form>
+  {% if num_tokens %}
+  <p>Number of Tokens: {{ num_tokens }}</p>
+  {% endif %}
+  {% if summary %}
+  <p>Summary:</p>
+  <textarea rows="16" cols="50" readonly>{{ summary }}</textarea>
+  {% endif %}
+</body>
+</html>
