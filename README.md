@@ -1,5 +1,7 @@
 # YouTube Video Summarizer
 
+> ⚠️ **Notice**: This application is not tested for secure for use over the internet. It is intended for local network use only.
+
 A Flask application that leverages OpenAI's APIs to transcribe and summarize YouTube videos.
 
 ## Features
