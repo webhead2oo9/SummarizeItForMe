@@ -61,3 +61,7 @@ A Flask application that leverages OpenAI's APIs to transcribe and summarize You
 1. Open a web browser and navigate to [http://127.0.0.1:5000](http://127.0.0.1:5000).
 2. Paste a YouTube URL into the input field and click "Submit".
 3. The application will download the video's audio, transcribe it, and then summarize the transcription. The summary will be displayed on the web page, along with the number of tokens in the transcription.
+
+## License
+
+This project is open-sourced under the [MIT License](LICENSE).
