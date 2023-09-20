@@ -56,8 +56,8 @@ def download_video(youtube_url):
         'format': 'bestaudio/best',
         'postprocessors': [{
             'key': 'FFmpegExtractAudio',
-            'preferredcodec': 'wav',
-            'preferredquality': '192',
+            'preferredcodec': 'mp3',
+            'preferredquality': '128',
         }],
         'outtmpl': f'downloaded_videos/{safe_video_title}.%(ext)s',
         'quiet': True,
@@ -135,7 +135,7 @@ def index():
         safe_video_title = download_video(youtube_url)
         
         if safe_video_title:
-            audio_file_path = f'downloaded_videos/{safe_video_title}.wav'
+            audio_file_path = f'downloaded_videos/{safe_video_title}.mp3'
             transcription = transcribe_audio(audio_file_path)
             
             # Delete the audio file after transcribing
